@@ -31,6 +31,21 @@ namespace TextEditor
 
         static void Open() { }
 
-        static void Edit() { }
+        static void Edit()
+        {
+            Console.Clear();
+            Console.WriteLine("Digite seu texto abaixo: (ENTER e depois ESC para sair!)");
+            Console.WriteLine("===============================");
+            string text = "";
+
+            do
+            {
+                text += Console.ReadLine();
+                text += Environment.NewLine;
+            }
+            while (Console.ReadKey().Key != ConsoleKey.Escape);
+
+            Console.Write(text);
+        }
     }
 }
